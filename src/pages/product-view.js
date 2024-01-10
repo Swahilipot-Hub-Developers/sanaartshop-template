@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Layout from "@/layout/Layout";
 
 const ProductView = () => {
@@ -746,7 +747,7 @@ const ProductView = () => {
                           Please provide valid email address!
                         </div>
                         <small className="form-text text-muted">
-                          Authentication only - we won't spam you.
+                          Authentication only - we wont spam you.
                         </small>
                       </div>
                       <div className="mb-3">

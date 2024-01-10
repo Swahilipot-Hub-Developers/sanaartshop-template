@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 const Header = () => {
   return (
@@ -6,15 +7,15 @@ const Header = () => {
         <div className="container">
           <a
             className="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1"
-            href="index.html"
+            href="/"
           >
-            <img src="img/logo-dark.png" width={142} alt="Cartzilla" />
+            <img src="/logo.png" width={142} alt="Cartzilla" />
           </a>
           <a
             className="navbar-brand d-sm-none me-2 order-lg-1"
-            href="index.html"
+            href="/"
           >
-            <img src="img/logo-icon.png" width={74} alt="Cartzilla" />
+            <img src="/logo.png" width={74} alt="Cartzilla" />
           </a>
           {/* Toolbar*/}
           <div className="navbar-toolbar d-flex align-items-center order-lg-3">
@@ -606,7 +607,7 @@ const Header = () => {
             {/* Primary menu*/}
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="index.html">
+                <a className="nav-link" href="/">
                   Quick Link
                 </a>
               </li>
