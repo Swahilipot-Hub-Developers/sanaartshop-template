@@ -1,3 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+
 const ProductCard = ({
   id,
   name,
@@ -16,12 +19,12 @@ const ProductCard = ({
             <i className="ci-heart" />
           </button>
           <div className="product-card-actions">
-            <a
+            <Link
               className="btn btn-light btn-icon btn-shadow fs-base mx-2"
               href='/product-view'
             >
               <i className="ci-eye" />
-            </a>
+            </Link>
             <button
               className="btn btn-light btn-icon btn-shadow fs-base mx-2"
               type="button"
@@ -29,9 +32,9 @@ const ProductCard = ({
               <i className="ci-cart" />
             </button>
           </div>
-          <a
+          <Link
             className="product-thumb-overlay"
-            href={`marketplace-single.html?product=${id}`}
+            href='/product-view'
           />
           <img src={imageUrl} alt={name} />
         </div>
@@ -59,7 +62,7 @@ const ProductCard = ({
             </div>
           </div>
           <h3 className="product-title fs-sm mb-2">
-            <a href={`marketplace-single.html?product=${id}`}>{name}</a>
+            <Link href='/product-view'>{name}</Link>
           </h3>
           <div className="d-flex flex-wrap justify-content-between align-items-center">
             <div className="fs-sm me-2">
