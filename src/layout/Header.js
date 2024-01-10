@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+
 const Header = () => {
   return (
     <header className="bg-light shadow-sm navbar-sticky">
@@ -11,10 +13,7 @@ const Header = () => {
           >
             <img src="/logo.png" width={142} alt="Cartzilla" />
           </a>
-          <a
-            className="navbar-brand d-sm-none me-2 order-lg-1"
-            href="/"
-          >
+          <a className="navbar-brand d-sm-none me-2 order-lg-1" href="/">
             <img src="/logo.png" width={74} alt="Cartzilla" />
           </a>
           {/* Toolbar*/}
@@ -41,15 +40,6 @@ const Header = () => {
                 <i className="navbar-tool-icon ci-search" />
               </div>
             </a>
-            <a
-              className="navbar-tool d-none d-lg-flex"
-              href="dashboard-favorites.html"
-            >
-              <span className="navbar-tool-tooltip">Favorites</span>
-              <div className="navbar-tool-icon-box">
-                <i className="navbar-tool-icon ci-heart" />
-              </div>
-            </a>
             <div className="navbar-tool dropdown ms-2">
               <a
                 className="navbar-tool-icon-box border dropdown-toggle"
@@ -62,7 +52,7 @@ const Header = () => {
                 />
               </a>
               <a className="navbar-tool-text ms-n1" href="dashboard-sales.html">
-                <small>Createx Std.</small>$1,375.00
+                <small>John Kamau</small>$1,375.00
               </a>
               <div className="dropdown-menu dropdown-menu-end">
                 <div style={{ minWidth: "14rem" }}>
@@ -73,59 +63,6 @@ const Header = () => {
                   >
                     <i className="ci-settings opacity-60 me-2" />
                     Settings
-                  </a>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-purchases.html"
-                  >
-                    <i className="ci-basket opacity-60 me-2" />
-                    Purchases
-                  </a>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-favorites.html"
-                  >
-                    <i className="ci-heart opacity-60 me-2" />
-                    Favorites<span className="fs-xs text-muted ms-auto">4</span>
-                  </a>
-                  <div className="dropdown-divider" />
-                  <h6 className="dropdown-header">Seller Dashboard</h6>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-sales.html"
-                  >
-                    <i className="ci-dollar opacity-60 me-2" />
-                    Sales
-                    <span className="fs-xs text-muted ms-auto">$1,375.00</span>
-                  </a>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-products.html"
-                  >
-                    <i className="ci-package opacity-60 me-2" />
-                    Products<span className="fs-xs text-muted ms-auto">5</span>
-                  </a>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-add-new-product.html"
-                  >
-                    <i className="ci-cloud-upload opacity-60 me-2" />
-                    Add New Product
-                  </a>
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="dashboard-payouts.html"
-                  >
-                    <i className="ci-currency-exchange opacity-60 me-2" />
-                    Payouts
-                  </a>
-                  <div className="dropdown-divider" />
-                  <a
-                    className="dropdown-item d-flex align-items-center"
-                    href="account-signin.html"
-                  >
-                    <i className="ci-sign-out opacity-60 me-2" />
-                    Sign Out
                   </a>
                 </div>
               </div>
@@ -607,9 +544,9 @@ const Header = () => {
             {/* Primary menu*/}
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Quick Link
-                </a>
+                <Link className="nav-link" href="/products">
+                   Products
+                </Link>
               </li>
             </ul>
           </div>
