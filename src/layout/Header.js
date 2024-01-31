@@ -549,6 +549,27 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" href="/cart">
+                   Cart
+                </Link>
+              </li>
+            </ul>
+             <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" href="/checkout">
+                   Checkout
+                </Link>
+              </li>
+            </ul>
+              <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" href="/login">
+                   Login
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

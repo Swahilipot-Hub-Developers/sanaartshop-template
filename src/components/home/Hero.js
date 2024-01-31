@@ -11,14 +11,11 @@ const Hero = () => {
           <div className="row mb-4 mb-sm-5">
             <div className="col-lg-7 col-md-9 text-center text-sm-start">
               <h1 className="text-white lh-base">
-                <span className="fw-light">Over</span> 1,500{" "}
-                <span className="fw-light">curated</span> Design{" "}
-                <span className="fw-light">resources</span>, Images, Graphic{" "}
-                <span className="fw-light">&amp;</span> Website{" "}
-                <span className="fw-light">templates</span>
+                E-Commerce website for the artists who share their work and art
+                to the world.
               </h1>
               <h2 className="h5 text-white fw-light">
-                High quality art created by our creative community
+                Created for artists, by artists.
               </h2>
             </div>
           </div>
