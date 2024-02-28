@@ -1,0 +1,119 @@
+// Toolbar with expandable filters
+#shop-filters.collapse
+  .row.g-4.pt-4
+    .col-lg-4.col-sm-6
+
+      // Categories
+      .card
+        .card-body.px-4
+          .widget
+            h3.widget-title.mb-2.pb-1 Categories
+            ul.widget-list.list-unstyled
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='all').form-check-input
+                  label(for='all').form-check-label All artworks
+                span.fs-xs.text-muted 498
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='premium').form-check-input
+                  label(for='premium').form-check-label Premium
+                span.fs-xs.text-muted 25
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='art').form-check-input
+                  label(for='art').form-check-label Art
+                span.fs-xs.text-muted 112
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='photography').form-check-input
+                  label(for='photography').form-check-label Photography
+                span.fs-xs.text-muted 93
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='music').form-check-input
+                  label(for='music').form-check-label Music
+                span.fs-xs.text-muted 48
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='gaming').form-check-input
+                  label(for='gaming').form-check-label Gaming
+                span.fs-xs.text-muted 82
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='sports').form-check-input
+                  label(for='sports').form-check-label Sports
+                span.fs-xs.text-muted 51
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='collections').form-check-input
+                  label(for='collections').form-check-label Collections
+                span.fs-xs.text-muted 11
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='utility').form-check-input
+                  label(for='utility').form-check-label Utility
+                span.fs-xs.text-muted 24
+
+    .col-lg-4.col-sm-6
+
+      // Sale Types
+      .card.mb-4
+        .card-body.px-4
+          .widget
+            h3.widget-title.mb-2.pb-1 Sale Types
+            ul.widget-list.list-unstyled
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='fixed-price').form-check-input
+                  label(for='fixed-price').form-check-label Fixed Price
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='live-auction').form-check-input
+                  label(for='live-auction').form-check-label Live auction
+
+      // Blockchain
+      .card
+        .card-body.px-4
+          .widget
+            h3.widget-title.mb-2.pb-1 Blockchain
+            ul.widget-list.list-unstyled
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='eth').form-check-input
+                  label(for='eth').form-check-label ETH
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='bnb').form-check-input
+                  label(for='bnb').form-check-label BNB
+              li.d-flex.justify-content-between.align-items-center.mb-1
+                .form-check
+                  input(type='checkbox' id='busd').form-check-input
+                  label(for='busd').form-check-label BUSD
+
+    .col-lg-4.col-sm-6
+
+      // Price range
+      .card
+        .card-body.px-4
+          .widget
+            h3.widget-title Price range
+            .range-slider(data-start-min='10' data-start-max='20' data-min='0' data-max='30' data-step='1' data-currency='ETH ')
+              .range-slider-ui
+              .d-flex.pb-1
+                .w-50.pe-2.me-2
+                  .input-group.input-group-sm
+                    button(type='button' data-bs-toggle='dropdown').btn.btn-secondary.dropdown-toggle
+                      | ETH
+                    .dropdown-menu
+                      a.dropdown-item(href='#') BNB
+                      a.dropdown-item(href='#') BUSD
+                    input(type='text').form-control.range-slider-value-min
+                .w-50.ps-2
+                  .input-group.input-group-sm
+                    button(type='button' data-bs-toggle='dropdown').btn.btn-secondary.dropdown-toggle
+                      | ETH
+                    .dropdown-menu
+                      a.dropdown-item(href='#') BNB
+                      a.dropdown-item(href='#') BUSD
+                    input(type='text').form-control.range-slider-value-max

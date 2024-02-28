@@ -1,0 +1,118 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'NFT Marketplace - Account'
+  - var parentMenu = 'Account'
+
+//- Navbar + Modal
+block navbar
+  include partials/navbar-nft
+
+//- Page Content
+block content
+
+  //- nft-account-header.pug template
+  include partials/nft-account-header
+
+  .container.mb-5.pb-3
+    .bg-light.shadow-lg.rounded-3.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-3.pe-xl-5
+          //- sidebar-account-nft.pug template
+          include partials/sidebar-account-nft
+
+        // Content
+        section.col-lg-9.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.ps-lg-0.pe-xl-5
+            h1.h3.mb-4.pb-2.text-sm-start.text-center My Collections
+
+            // Collections grid
+            .row.row-cols-md-2.row-cols-1.g-4.mb-4.pb-3
+
+              // Collection item
+              .col
+                article
+                  .card.mb-3
+                    .card-body.p-3
+
+                      .d-flex.align-items-center.justify-content-between.mb-3
+
+                        // Author
+                        .d-inline-flex.align-items-center.position-relative
+                          img(src='img/nft/thumbnails/01.png' width='32' alt='Avatar').rounded-circle.me-2
+                          .fs-sm
+                            | by
+                            a(href='nft-vendor.html').ms-1.fw-medium.text-accent.stretched-link @Sharan_Pagadala
+
+                        // Delete button
+                        button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Remove').btn-wishlist.btn-sm.flex-shrink-0.ms-3
+                          i.ci-trash
+
+                      // Collage
+                      a(href='nft-catalog-v2.html').d-block
+                        .row.row-cols-2.g-2
+                          .col
+                            img(src='img/nft/collections/1-1.jpg' alt='Collection item').rounded-1
+                          .col
+                            .mt-n2
+                              img(src='img/nft/collections/1-2.jpg' alt='Collection item').rounded-1.mt-2
+                              img(src='img/nft/collections/1-3.jpg' alt='Collection item').rounded-1.mt-2
+
+                  // Collection title
+                  h3.h5.mb-1
+                    a(href='nft-catalog-v2.html').nav-link-style
+                      | Contemporary art collage
+                  span.fs-sm.text-muted $ 12180.95
+
+              // Collection item
+              .col
+                article
+                  .card.mb-3
+                    .card-body.p-3
+
+                      .d-flex.align-items-center.justify-content-between.mb-3
+
+                        // Author
+                        .d-flex.align-items-center.position-relative
+                          img(src='img/nft/thumbnails/02.png' width='32' alt='Avatar').rounded-circle.me-2
+                          .fs-sm
+                            | by
+                            a(href='nft-vendor.html').ms-1.fw-medium.text-accent.stretched-link @Simonlee
+
+                        // Delete button
+                        button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Remove').btn-wishlist.btn-sm.flex-shrink-0.ms-3
+                          i.ci-trash
+
+                      // Collage
+                      a(href='nft-catalog-v2.html').d-block
+                        .row.row-cols-2.g-2
+                          .col
+                            img(src='img/nft/collections/2-1.jpg' alt='Collection item').rounded-1
+                          .col
+                            .mt-n2
+                              img(src='img/nft/collections/2-2.jpg' alt='Collection item').rounded-1.mt-2
+                              img(src='img/nft/collections/2-3.jpg' alt='Collection item').rounded-1.mt-2
+
+                  // Collection title
+                  h3.h5.mb-1
+                    a(href='nft-catalog-v2.html').nav-link-style
+                      | 3D digital abstract art
+                  span.fs-sm.text-muted $ 9020.34
+
+            p.mb-4 Continue building your collections by placing bids on artworks.
+
+            .d-flex.flex-sm-row.flex-column
+              a(href='nft-catalog-v1.html').btn.btn-accent
+                | Explore marketplace
+                i.ci-arrow-right.ms-2
+
+//- Footer
+block footer
+  include partials/footer-nft-account
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

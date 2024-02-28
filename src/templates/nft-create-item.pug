@@ -1,0 +1,276 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['flatpickr/dist/flatpickr.min.css']
+  - var vendorScripts = ['flatpickr/dist/flatpickr.min.js', 'flatpickr/dist/plugins/rangePlugin.js']
+  - var pageTitle = 'Create New Item'
+  - var breadcrumbs = [{'title': 'NFT Marketplace', 'link': 'home-nft.html'}, {'title': 'Create New Item'}]
+  - var parentMenu = 'Catalog'
+
+//- Navbar
+block navbar
+  include partials/navbar-nft
+
+
+//- Page Content
+block content
+
+  // Page title
+  .bg-accent.mb-4.py-4
+    .container.d-lg-flex.justify-content-between.py-2.py-lg-3
+      .order-lg-2.mb-3.mb-lg-0.pt-lg-2
+        +breadcrumb('light')
+      .order-lg-1.pe-lg-4.text-center.text-lg-start
+        h1.h3.text-light.mb-0 !{pageTitle}
+
+
+  // Page content
+  section.container.mb-5.pt-3.pb-md-5.pb-1
+    .row.gy-5
+      form(novalidate).needs-validation.col-md-8
+
+        // Upload file
+        .mb-md-5.mb-4.pb-md-0.pb-2
+          h2.h5.mb-2.pb-1
+            | Upload file
+          p.mb-4.fs-sm
+            | File types supported: PNG, JPG, GIF, WEBP, MP3 or MP4. Max size: 100mb.
+
+          // Drag and drop file upload
+          .file-drop-area
+            .file-drop-icon.ci-cloud-upload
+            span.file-drop-message Drag and drop here to upload
+            input(type="file").file-drop-input
+            button(type="button").file-drop-btn.btn.btn-outline-accent
+              | Or select file
+
+        // Details
+        .mb-md-5.mb-4.pb-md-0.pb-2
+          h2.h5.mb-3
+            | Details
+          .row.gy-md-4.gy-3
+
+            .col-12
+              label(for='details-title').form-label
+                | Title
+                span.ms-1.text-danger *
+              input(id='details-title' type='Text' placeholder='Item title' required).form-control
+              .invalid-feedback
+                | Please, enter the title.
+              span.form-text
+                | Maximum 100 characters. No HTML or emoji allowed.
+
+            .col-sm-6
+              label(for='details-category').form-label
+                | Category
+              select(id='details-category').form-select
+                option(disabled selected) Choose category
+                option Art
+                option Photography
+                option Music
+                option Gaming
+                option Sports
+                option Collections
+                option Utility
+
+            .col-sm-6
+              label(for='details-collection').form-label
+                | Add to collection
+              select(id='details-collection').form-select
+                option(disabled selected) Choose collection
+                option Contemporary art collage
+                option 3D digital abstract art
+                option Clone X Mini Monsters
+                option Ocean and sky
+                option Aesthetic art collage
+
+            .col-12
+              label(for='details-description').form-label
+                | Description
+              textarea(id='details-description' rows='4' placeholder='Enter a short description of your item').form-control
+              span.form-text
+                | 0 of 500 characters used.
+
+        // Price & payment options
+        div
+          h2.h5.mb-4.pb-md-2
+            | Price &amp; payment options
+
+          // Button tabs
+          div(style='overflow-x: auto;').mb-4
+            div(class='nav nav-tabs d-inline-flex ms-n1 mb-0 border-0 flex-nowrap text-nowrap' role='tablist')
+              div(data-bs-target='#price-fix' data-bs-toggle='tab' role='tab').btn.btn-outline-accent.active.position-relative.ms-1.me-2.mb-2
+                i.ci-lable.me-2
+                | Fixed price
+                label(style='cursor: pointer;').position-absolute.top-0.start-0.w-100.h-100
+                  input(type='radio' name='price' checked).visually-hidden
+              div(data-bs-target='#price-open' data-bs-toggle='tab' role='tab').btn.btn-outline-accent.position-relative.ms-1.me-2.mb-2
+                i.ci-auction.me-2
+                | Open for bids
+                label(style='cursor: pointer;').position-absolute.top-0.start-0.w-100.h-100
+                  input(type='radio' name='price').visually-hidden
+              div(data-bs-target='#price-time' data-bs-toggle='tab' role='tab').btn.btn-outline-accent.position-relative.ms-1.mb-2
+                i.ci-time.me-2
+                | Time auctions
+                label(style='cursor: pointer;').position-absolute.top-0.start-0.w-100.h-100
+                  input(type='radio' name='price').visually-hidden
+
+          // Tabs content
+          .tab-content
+
+            // Fixed price tab
+            div(id='price-fix' class='tab-pane fade mb-4 pb-2 show active' role='tabpanel')
+              .row.gy-md-4.gy-3.mb-md-5.mb-4.pb-md-0.pb-2
+
+                .col-sm-6
+                  label(for='price-fix-value').form-label
+                    | Price
+                  .input-group
+                    input(id='price-fix-value' type='text' placeholder='Enter price').form-control
+                    div(data-bs-toggle='select').dropdown
+                      button(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle.rounded-0.rounded-end
+                        span.dropdown-toggle-label ETH
+                      input(type='hidden' name='price-fix-currency')
+                      div(style='min-width: auto;').dropdown-menu.dropdown-menu-end.w-100
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label ETH
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label BNB
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label BUSD
+
+                .col-sm-6
+                  label(for='price-fix-payment').form-label
+                    | Preferred payment type
+                  select(id='price-fix-payment').form-select
+                    option ETH
+                    option BNB
+                    option BUSD
+
+                .col-sm-6
+                  label(for='price-fix-payout').form-label
+                    | Payout to address
+                  input(id='price-fix-payout' type='text' placeholder='eg. 0x1dDB2C08s97...9Ec').form-control
+
+                .col-sm-6
+                  .form-check.mt-sm-4.pt-sm-3
+                    input(id='price-fix-wallet' type='checkbox' checked).form-check-input
+                    label(for='price-fix-wallet').form-check-label.fs-base
+                      span.me-2 Use address currently connected to wallet
+                      i.ci-wallet.fs-lg.mt-n1.align-middle.text-muted
+
+              // Properties
+              h3.h5.mb-4
+                | Properties <span class='fw-normal text-muted'>(optional)</span>
+              .row.gy-md-4.gy-3.mb-3
+                .col-sm-6
+                  input(type='text' placeholder='eg. Size').form-control
+                .col-sm-6
+                  input(type='text' placeholder='eg. M').form-control
+              a(href='#')
+                i.ci-add.me-2
+                ins Add more
+
+            // Open for bids tab
+            div(id='price-open' class='tab-pane fade mb-4 pb-2' role='tabpanel')
+              .row.gy-md-4.gy-3.mb-md-5.mb-4.pb-md-0.pb-2
+
+                .col-12
+                  label(for='price-open-min').form-label
+                    | Minimum bid
+                  .input-group
+                    input(id='price-open-min' type='text' placeholder='Enter minimum bid').form-control
+                    div(data-bs-toggle='select').dropdown
+                      button(type='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false').btn.btn-outline-secondary.dropdown-toggle.rounded-0.rounded-end
+                        span.dropdown-toggle-label ETH
+                      input(type='hidden' name='price-open-currency')
+                      div(style='min-width: auto;').dropdown-menu.dropdown-menu-end.w-100
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label ETH
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label BNB
+                        a(href='#').dropdown-item
+                          span.dropdown-item-label BUSD
+
+                .col-sm-6
+                  label(for='price-open-start').form-label
+                    | Starting date
+                  .input-group
+                    input(id='price-open-start' type='text' placeholder='Choose date and time' data-datepicker-options='{"enableTime": true, "altInput": true, "altFormat": "F j, Y", "dateFormat": "Y-m-d"}' data-linked-input="#price-open-end").form-control.date-picker.date-range.rounded.pe-5
+                    i.ci-calendar.position-absolute.top-50.end-0.translate-middle-y.me-3
+
+                .col-sm-6
+                  label(for='price-open-end').form-label
+                    | Expiration date
+                  .input-group
+                    input(id='price-open-end' type='text' placeholder='Choose date and time' data-datepicker-options='{"enableTime": true, "altInput": true, "altFormat": "F j, Y", "dateFormat": "Y-m-d"}').form-control.date-picker.rounded.pe-5
+                    i.ci-calendar.position-absolute.top-50.end-0.translate-middle-y.me-3
+
+                .col-sm-6
+                  label(for='price-open-payout').form-label
+                    | Payout to address
+                  input(id='price-open-payout' type='text' placeholder='eg. 0x1dDB2C08s97...9Ec').form-control
+
+                .col-sm-6
+                  .form-check.mt-sm-4.pt-sm-3
+                    input(id='price-open-wallet' type='checkbox' checked).form-check-input
+                    label(for='price-open-wallet').form-check-label.fs-base
+                      span.me-2 Use address currently connected to wallet
+                      i.ci-wallet.fs-lg.mt-n1.align-middle.text-muted
+
+              // Properties
+              h3.h5.mb-4
+                | Properties <span class='fw-normal text-muted'>(optional)</span>
+              .row.gy-md-4.gy-3.mb-3
+                .col-sm-6
+                  input(type='text' placeholder='eg. Size').form-control
+                .col-sm-6
+                  input(type='text' placeholder='eg. M').form-control
+              a(href='#')
+                i.ci-add.me-2
+                ins Add more
+
+            // Time auctions tab
+            div(id='price-time' class='tab-pane fade' role='tabpanel')
+              p Time auctions settings go here
+
+          // Submit
+          .pt-2
+            button(type='submit').btn.btn-lg.btn-accent.d-block.w-100
+              | Create item
+
+      // Preview
+      aside.col-lg-3.offset-lg-1.col-md-4.position-relative
+
+        div(style='top: 100px;').sticky-top
+          h4.h5.mb-3.text-md-start.text-center Preview
+
+          // Preview item
+          div(style='max-width: 500px; pointer-events: none;').card.border-0.shadow.mx-auto
+            .card-img-top.position-relative.overflow-hidden
+              a(href='nft-single-auction-live.html').d-block
+                img(src='img/nft/catalog/06.jpg' alt='Product image')
+
+            .card-body
+              h3.product-title.mb-2.fs-base
+                a(href='nft-single-auction-live.html').d-block.text-truncate
+                  | Ocean and sky
+              span.fs-sm.text-muted Current bid:
+              .d-flex.align-items-center.flex-wrap
+                h4.mt-1.mb-0.fs-base.text-darker 0.5 ETH
+                span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,000.55)
+
+            .card-footer.mt-n1.py-0.border-0
+              .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+
+//- Footer
+block footer
+  include partials/footer-nft-account
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

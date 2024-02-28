@@ -1,0 +1,117 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Connect Wallet'
+  - var breadcrumbs = [{'title': 'NFT Marketplace', 'link': 'home-nft.html'}, {'title': 'Connect Wallet'}]
+  - var parentMenu = 'Catalog'
+
+//- Navbar
+block navbar
+  include partials/navbar-nft
+
+
+//- Page Content
+block content
+
+  // Page title
+  .bg-accent.mb-4.py-4
+    .container.d-lg-flex.justify-content-between.py-2.py-lg-3
+      .order-lg-2.mb-3.mb-lg-0.pt-lg-2
+        +breadcrumb('light')
+      .order-lg-1.pe-lg-4.text-center.text-lg-start
+        h1.h3.text-light.mb-0 !{pageTitle}
+
+
+  // Page content
+  section.container.mb-5.pt-1.pb-md-5.pb-4
+
+    .mb-4.pb-3
+      p.mb-2.fs-lg Choose the most suitable blockchain wallet for your needs.
+      a(href='#'): ins Learn more about wallets
+
+    // Payment items grid
+    .row.row-cols-lg-3.row-cols-sm-2.row-cols-1.gy-sm-grid-gutter.gy-3
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/metamask.svg' width='60' alt='Meta Mask')
+              span.badge.bg-success.ms-3 Popular
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Meta Mask
+            p.mb-0.fs-sm.text-muted
+              | MetaMask provides an essential utility for blockchain newcomers, token traders, crypto gamers and developers.
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/coinbase.svg' width='60' alt='Coinbase')
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Coinbase Wallet
+            p.mb-0.fs-sm.text-muted
+              | Coinbase Wallet is your passport to the decentralized web. Harness the power of DeFi to earn yield, grow your NFT collection, and much more.
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/walletconnect.svg' width='60' alt='Wallet connect')
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Wallet Connect
+            p.mb-0.fs-sm.text-muted
+              | WalletConnect is the web3 standard to connect blockchain wallets to dapps. Hundreds of dapp’s use WalletConnect to connect with wallets.
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/fortmatic.svg' width='60' alt='Fortmatic')
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Fortmatic
+            p.mb-0.fs-sm.text-muted
+              | Fortmatic is SOC 2 Type 1 compliant with a non-custodial HSM architecture. Fortmatic is a collaborative effort from the best.
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/portis.svg' width='60' alt='Portis')
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Portis
+            p.mb-0.fs-sm.text-muted
+              | Portis is non-sustodial blockchain wallet that makes apps simple for everyone. Boost conversions by accepting cards worldwide.
+
+      // Payment item
+      .col
+        article.card.border-0.shadow.position-relative.h-100
+          .card-body
+            .d-flex.align-items-start.justify-content-between.mb-4
+              img(src='img/nft/connect-wallet/torus.svg' width='60' alt='Torus')
+            h2.h5.mb-2
+              a(href='#').nav-link-style.stretched-link
+                | Torus
+            p.mb-0.fs-sm.text-muted
+              | Torus is built and designed to be trustless, users' identities are not controlled by any central authority. One-click login for Web 3.0.
+
+
+
+//- Footer
+block footer
+  include partials/footer-nft-account
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

@@ -1,0 +1,674 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'Vendor Page'
+  - var breadcrumbs = [{'title': 'Marketplace', 'link': 'home-nft.html'}, {'title': 'Vendor Page'}]
+  - var parentMenu = 'Catalog'
+
+//- Navbar
+block navbar
+  include partials/navbar-nft
+
+//- Page Title
+block page-title
+  include partials/page-title-marketplace
+
+//- Page Content
+block content
+
+  // Page content
+  section.container.mb-4
+
+    .mt-lg-2
+      img(src='img/nft/vendor/avatar.png' width='140' alt='Avatar' style='border-color: #ffffff !important;').rounded-circle.border.border-3.d-lg-block.d-none
+
+      .d-lg-none.d-flex.align-items-center.justify-content-center
+        img(src='img/nft/vendor/avatar-sm.png' width='36' alt='Avatar').rounded-circle.me-2
+        h6.mb-0.text-light Robert Fox
+
+    .row
+
+      // Sidebar
+      aside.col-lg-3.pt-lg-4
+        div(id='vendor-sidebar').offcanvas.offcanvas-collapse
+          .offcanvas-header.align-items-center.shadow-sm
+            h2.h5.mb-0 Vendor
+            button(type='button' class='btn-close ms-auto' data-bs-dismiss='offcanvas' aria-label='Close')
+
+          .offcanvas-body
+
+            // User avatar
+            img(src='img/nft/vendor/avatar.png' width='140' alt='Avatar').rounded-circle.d-lg-none.d-block.mb-4
+
+            // User meta
+            .mb-4.pb-2
+              h3.mb-2.fs-lg.fw-normal.text-body
+                | Robert Fox
+              h2.h4.mb-3
+                | @foxnet_creator
+              span.d-inline-block.mb-3.fs-sm.text-muted Joined July 2021
+              a(href='#').d-block.mb-4.text-decoration-none
+                span.text-body 8508550793340827...
+                i(data-bs-toggle='tooltip' data-bs-placement='top' title='Copy').ci-copy.ms-2.ps-1.fs-sm.text-accent
+              .d-flex.align-items-center.flex-wrap.text-nowrap.mb-4.fs-sm
+                .mb-2.me-sm-3.me-2.text-muted
+                  | <span class='fw-medium text-body'>766</span> followers
+                .mb-2.me-sm-3.me-2.ps-sm-3.ps-2.border-start.text-muted
+                  | <span class='fw-medium text-body'>2K</span> following
+
+              // Follow
+              .d-flex.flex-lg-row.flex-column
+                button.btn.btn-accent
+                  | Follow
+
+          .offcanvas-footer.d-flex.flex-column.align-items-start.p-lg-0
+
+            // User bio
+            .mb-4.pb-2.fs-sm
+              h6.mb-2.fs-md Short bio
+              p.mb-0
+                | Non mi, quis ornare odio. Adipiscing a varius varius interdum. Diam pharetra sapien, eu tristique aliquet.
+              a(href='#').d-inline-block.mt-1
+                ins Read more
+
+            // Socials
+            .mt-n2
+              a(href='#').btn-social.bs-twitter.me-2.mt-2
+                i.ci-twitter
+              a(href='#').btn-social.bs-facebook.me-2.mt-2
+                i.ci-facebook
+              a(href='#').btn-social.bs-instagram.me-2.mt-2
+                i.ci-instagram
+              a(href='#').btn-social.bs-youtube.me-2.mt-2
+                i.ci-youtube
+
+
+      // Content
+      .col-lg-9.mt-lg-n5.mt-5.pt-lg-2.pt-3
+        .d-flex.flex-md-row.flex-column.align-items-md-center.justify-content-md-between.mb-lg-4.mb-3.pb-md-1
+
+          // Nav tabs
+          div(style='overflow-x: auto;').mb-md-0.mb-4.pb-1
+            ul(class='nav nav-tabs nav-fill flex-nowrap text-nowrap mb-0' role='tablist')
+              li.nav-item
+                a(href='#created' class='nav-link active' data-bs-toggle='tab' role='tab')
+                  | Created <span class='opacity-60'>(6)</span>
+              li.nav-item
+                a(href='#collections' class='nav-link' data-bs-toggle='tab' role='tab')
+                  | Collections <span class='opacity-60'>(2)</span>
+              li.nav-item
+                a(href='#liked' class='nav-link' data-bs-toggle='tab' role='tab')
+                  | Liked <span class='opacity-60'>(3)</span>
+              li.nav-item
+                a(href='#activity' class='nav-link' data-bs-toggle='tab' role='tab')
+                  | Activity
+
+          // Sorting
+          .d-flex.flex-md-row.flex-column.align-items-md-center.flex-shrink-0.ms-md-4.ps-md-2.pb-1
+            label(for='sorting').form-label.mb-md-0.me-md-2.pe-md-1.fs-sm.fw-normal.text-nowrap
+              | Sort by:
+            select(id='sorting' style='min-width: 222px;').form-select
+              option(selected disabled) Newest
+              option Oldest
+
+        // Tabs content
+        .tab-content
+
+          // Created items grid
+          div(id='created' class='tab-pane fade show active' role='tabpanel')
+            .row.row-cols-md-3.row-cols-sm-2.row-cols-1.gy-sm-4.gy-3
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-auction-live.html').d-block
+                      img(src='img/nft/catalog/02.jpg' alt='Product image')
+
+                    // Countdown timer
+                    .badge.bg-dark.m-3.fs-sm.position-absolute.top-0.start-0.zindex-5
+                      i.ci-time.me-1
+                      .countdown.d-inline(data-countdown='12/31/2022 09:00:00 PM')
+                        span.countdown-hours.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-minutes.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-seconds.mb-0.me-0
+                          span.countdown-value 0
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-auction-live.html').d-block.text-truncate
+                        | Ocean and sky
+                    span.fs-sm.text-muted Current bid:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.5 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,000.55)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-buy.html').d-block
+                      img(src='img/nft/catalog/04.jpg' alt='Product image')
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-buy.html').d-block.text-truncate
+                        | Astronaut surrounded by lights
+                    span.fs-sm.text-muted Reserve price:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.1 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 400.19)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-buy.html').d-block
+                      img(src='img/nft/catalog/03.jpg' alt='Product image')
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-buy.html').d-block.text-truncate
+                        | Aesthetic art collage
+                    span.fs-sm.text-muted Reserve price:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.6 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,400.65)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-auction-live.html').d-block
+                      img(src='img/nft/catalog/09.jpg' alt='Product image')
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-auction-live.html').d-block.text-truncate
+                        | 3d aesthetics with shapes
+                    span.fs-sm.text-muted Current bid:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.156 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 595.76)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-auction-live.html').d-block
+                      img(src='img/nft/catalog/10.jpg' alt='Product image')
+
+                    // Countdown timer
+                    .badge.bg-dark.m-3.fs-sm.position-absolute.top-0.start-0.zindex-5
+                      i.ci-time.me-1
+                      .countdown.d-inline(data-countdown='12/31/2022 12:00:00 PM')
+                        span.countdown-hours.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-minutes.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-seconds.mb-0.me-0
+                          span.countdown-value 0
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-auction-live.html').d-block.text-truncate
+                        | Ocean and sky
+                    span.fs-sm.text-muted Current bid:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.5 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,000.55)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-buy.html').d-block
+                      img(src='img/nft/catalog/11.jpg' alt='Product image')
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Add to Favorites' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-buy.html').d-block.text-truncate
+                        | Aesthetic art collage
+                    span.fs-sm.text-muted Reserve price:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.6 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,400.65)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @foxnet_creator
+
+            // Load more
+            button.btn.btn-outline-accent.d-block.w-100.mt-sm-4.mt-3
+              i.ci-reload.me-2
+              | Load more
+
+
+          // Collections
+          div(id='collections' class='tab-pane fade' role='tabpanel')
+
+            // Collections grid
+            .row.row-cols-md-2.row-cols-1.g-4
+
+              // Collection item
+              .col
+                article
+                  .card.mb-3
+                    .card-body.p-3
+
+                      // Author
+                      .d-flex.align-items-center.position-relative.mb-3
+                        img(src='img/nft/thumbnails/01.png' width='32' alt='Avatar').rounded-circle.me-2
+                        .fs-sm
+                          | by
+                          a(href='nft-vendor.html').ms-1.fw-medium.text-accent.stretched-link @Sharan_Pagadala
+
+                      // Collage
+                      a(href='nft-catalog-v2.html').d-block
+                        .row.row-cols-2.g-2
+                          .col
+                            img(src='img/nft/collections/1-1.jpg' alt='Collection item').rounded-1
+                          .col
+                            .mt-n2
+                              img(src='img/nft/collections/1-2.jpg' alt='Collection item').rounded-1.mt-2
+                              img(src='img/nft/collections/1-3.jpg' alt='Collection item').rounded-1.mt-2
+
+                  // Collection title
+                  h3.h5.mb-1
+                    a(href='nft-catalog-v2.html').nav-link-style
+                      | Contemporary art collage
+                  span.fs-sm.text-muted $ 12180.95
+
+              // Collection item
+              .col
+                article
+                  .card.mb-3
+                    .card-body.p-3
+
+                      // Author
+                      .d-flex.align-items-center.position-relative.mb-3
+                        img(src='img/nft/thumbnails/03.png' width='32' alt='Avatar').rounded-circle.me-2
+                        .fs-sm
+                          | by
+                          a(href='nft-vendor.html').ms-1.fw-medium.text-accent.stretched-link @Annet_creator
+
+                      // Collage
+                      a(href='nft-catalog-v2.html').d-block
+                        .row.row-cols-2.g-2
+                          .col
+                            img(src='img/nft/collections/3-1.jpg' alt='Collection item').rounded-1
+                          .col
+                            .mt-n2
+                              img(src='img/nft/collections/3-2.jpg' alt='Collection item').rounded-1.mt-2
+                              img(src='img/nft/collections/3-3.jpg' alt='Collection item').rounded-1.mt-2
+
+                  // Collection title
+                  h3.h5.mb-1
+                    a(href='nft-catalog-v2.html').nav-link-style
+                      | Clone X Mini Monsters
+                  span.fs-sm.text-muted $ 1520.18
+
+
+          // Liked
+          div(id='liked' class='tab-pane fade' role='tabpanel')
+
+            // Liked items grid
+            .row.row-cols-md-3.row-cols-sm-2.row-cols-1.gy-sm-4.gy-3
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-buy.html').d-block
+                      img(src='img/nft/catalog/05.jpg' alt='Product image')
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Remove' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart-filled.text-danger
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-buy.html').d-block.text-truncate
+                        | Aesthetic art collage
+                    span.fs-sm.text-muted Reserve price:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.6 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,400.65)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/05.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @Sharan_Pagadala
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-auction-live.html').d-block
+                      img(src='img/nft/catalog/06.jpg' alt='Product image')
+
+                    // Countdown timer
+                    .badge.bg-dark.m-3.fs-sm.position-absolute.top-0.start-0.zindex-5
+                      i.ci-time.me-1
+                      .countdown.d-inline(data-countdown='12/31/2022 12:00:00 PM')
+                        span.countdown-hours.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-minutes.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-seconds.mb-0.me-0
+                          span.countdown-value 0
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Remove' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart-filled.text-danger
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-auction-live.html').d-block.text-truncate
+                        | Ocean and sky
+                    span.fs-sm.text-muted Current bid:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.5 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 2,000.55)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/06.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @Simonlee
+
+              // Product
+              .col.mb-2
+                article.card.h-100.border-0.shadow
+                  .card-img-top.position-relative.overflow-hidden
+                    a(href='nft-single-auction-live.html').d-block
+                      img(src='img/nft/catalog/07.jpg' alt='Product image')
+
+                    // Countdown timer
+                    .badge.bg-dark.m-3.fs-sm.position-absolute.top-0.start-0.zindex-5
+                      i.ci-time.me-1
+                      .countdown.d-inline(data-countdown='12/31/2022 12:00:00 PM')
+                        span.countdown-hours.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-minutes.mb-0.me-0
+                          span.countdown-value 0
+                          span.countdown-label.fs-lg :
+                        span.countdown-seconds.mb-0.me-0
+                          span.countdown-value 0
+
+                    // Wishlist button
+                    button(type='button' data-bs-toggle='tooltip' data-bs-placement='left' title='Remove' style='margin: 12px;').btn-wishlist.btn-sm.position-absolute.top-0.end-0
+                      i.ci-heart-filled.text-danger
+
+                  .card-body
+                    h3.product-title.mb-2.fs-base
+                      a(href='nft-single-auction-live.html').d-block.text-truncate
+                        | 3d aesthetics with shapes
+                    span.fs-sm.text-muted Current bid:
+                    .d-flex.align-items-center.flex-wrap
+                      h4.mt-1.mb-0.fs-base.text-darker 0.156 ETH
+                      span.mt-1.ms-1.fs-xs.text-muted (≈ $ 595.76)
+
+                  .card-footer.mt-n1.py-0.border-0
+                    .d-flex.align-items-center.position-relative.mb-1.py-3.border-top
+                      img(src='img/nft/catalog/avatars/07.png' width='32' alt='Avatar').me-2.rounded-circle
+                      a(href='nft-vendor.html').nav-link-style.fs-sm.stretched-link @Shubham_Dhage
+
+
+          // Activity
+          div(id='activity' class='tab-pane fade' role='tabpanel')
+
+            // Orders list
+            .table-responsive.fs-md.mb-4.pb-1
+              table(style='min-width: 880px;').table.mb-0
+                thead.text-uppercase.bg-secondary
+                  tr
+                    th Item
+                    th Type
+                    th Price
+                    th From
+                    th To
+                    th Date
+                tbody
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/04.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | 3d aesthetics with...
+                          span.fs-sm.text-muted by @freeross
+                    td.py-4
+                      span.badge.bg-success Sales
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | 0.1 ETH
+                      span.fs-sm.text-muted (≈ $ 400.19)
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @freeross
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | 4 hours ago
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/05.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | Aesthetic art collage
+                          span.fs-sm.text-muted by @foxnet_creator
+                    td.py-4
+                      span.badge.bg-info Listings
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | 0.4 ETH
+                      span.fs-sm.text-muted (≈ $ 649.82)
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      | —
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | 1 day ago
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/06.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | Contemporary art...
+                          span.fs-sm.text-muted by @lulucollages
+                    td.py-4
+                      span.badge.bg-danger Bids
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | 0.25 ETH
+                      span.fs-sm.text-muted (≈ $ 493.24)
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @lulucollages
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | Dec 22 <br> at 3:41 pm
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/07.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | Ocean and sky
+                          span.fs-sm.text-muted by @YunusKullebi
+                    td.py-4
+                      span.badge.bg-danger Bids
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | 0.1 ETH
+                      span.fs-sm.text-muted (≈ $ 400.19)
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @unusKullebi
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | Nov 15 <br> at 11:20 am
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/08.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | Astronaut &amp; lights
+                          span.fs-sm.text-muted by @foxnet_creator
+                    td.py-4
+                      span.badge.bg-warning Transfers
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | —
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @DistroKid
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | Nov 4 <br> at 5:16 pm
+                  tr
+                    td.py-4
+                      .d-flex.align-items-center.position-relative
+                        img(src='img/nft/thumbnails/09.jpg' width='48' alt='Product thumbnail').rounded.me-2
+                        .ps-1
+                          h6.mb-0.fs-base.text-body
+                            a(href='#').nav-link-style.d-block.stretched-link
+                              | Clone Mini Monsters
+                          span.fs-sm.text-muted by @MihailGreen
+                    td.py-4
+                      span.badge.bg-success Sales
+                    td.py-4
+                      h6.mb-1.fs-sm.text-darker
+                        | 2.8 ETH
+                      span.fs-sm.text-muted (≈ $ 1360.75)
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @MihailGreen
+                    td.py-4
+                      a(href='#').nav-link-style.fw-medium
+                        | @foxnet_creator
+                    td.py-4
+                      span.fs-sm.text-muted
+                        | Oct 29 <br> at 6:29 pm
+
+            button.btn.btn-outline-accent.d-block.w-100
+              i.ci-reload.me-2
+              | Load more
+
+
+  // Mobile app
+  section.container.mb-4.py-lg-5.py-4
+
+    // Banner
+    .card.border-0.position-relative.overflow-hidden
+
+      // Overlay bg
+      span(style='background-image: conic-gradient(from 207.95deg at 50% 50%, #885CFF -57.31deg, #FF6B9B 44.14deg, #DC86FF 78.21deg, #885CFF 123.94deg, #DC86FF 186.36deg, #FF6B9B 249.2deg, #885CFF 302.69deg, #FF6B9B 404.14deg);').d-block.w-100.h-100.position-absolute.top-0.start-0.zindex-1.bg-accent.opacity-15
+
+      // Overlay content
+      .card-body.row.py-0.px-sm-0.position-relative.zindex-5
+        .col-lg-9.col-sm-10.offset-sm-1.d-flex.flex-md-row.flex-column.align-items-md-end.text-md-start.text-center
+          div(style='max-width: 495px;').my-5.me-md-5.me-auto.ms-md-0.ms-auto.py-md-4
+            h3.h2.mb-3
+              | <span class='text-accent'>Best App</span> for NFT Enthusiasts
+            p.mb-sm-4.mb-3
+              | If you're an NFT enthusiast, or are looking to get more familiar with NFTs, consider downloading our NFT App!
+            .mx-n1
+              a(href='#').btn-market.btn-apple.mt-3.mx-1
+                span.btn-market-subtitle Download on the
+                span.btn-market-title App Store
+              a(href='#').btn-market.btn-google.mt-3.mx-1
+                span.btn-market-subtitle Download on the
+                span.btn-market-title Google Play
+          div.flex-shrink-0.ms-md-auto
+            img(src='img/nft/mobile-app.svg' alt='Illustration' style='border-top-left-radius: 28px; border-top-right-radius: 28px; box-shadow: 16px 16px 24px -7px rgba(0, 0, 0, .3);')
+
+
+//- Footer
+block footer
+  include partials/footer-nft
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

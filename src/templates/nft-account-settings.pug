@@ -1,0 +1,110 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'NFT Marketplace - Account'
+  - var parentMenu = 'Account'
+
+//- Navbar + Modal
+block navbar
+  include partials/navbar-nft
+
+//- Page Content
+block content
+
+  //- nft-account-header.pug template
+  include partials/nft-account-header
+
+  .container.mb-5.pb-3
+    .bg-light.shadow-lg.rounded-3.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-3.pe-xl-5
+          //- sidebar-account-nft.pug template
+          include partials/sidebar-account-nft
+
+
+        // Content
+        section.col-lg-9.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.ps-lg-0.pe-xl-5
+            h1.h3.mb-4.pt-2.text-center.text-sm-start Profile Settings
+            .bg-secondary.rounded-3.p-4.mb-4.text-center.text-sm-start
+              .d-flex.flex-sm-row.flex-column.align-items-sm-start.align-items-center
+                img(src='img/nft/vendor/avatar-square.jpg' width='90' alt='Createx Studio').rounded.mb-sm-0.mb-3
+                .ms-n2.ps-sm-4
+                  button(type='button').btn.btn-outline-accent.mb-2.ms-2
+                    i.ci-loading.me-2
+                    | Change <span class='d-none d-sm-inline'>avatar</span>
+                  button(type='button').btn.btn-outline-danger.mb-2.ms-2
+                    i.ci-trash.me-2
+                    | Delete
+                  .pt-1.mb-0.fs-sm.text-muted We recommend an image of at least 400x400. Gifs work too :)
+
+            form
+              .row.gy-3.mb-4.pb-md-3.mb-2
+                .col-sm-6
+                  label(for='profile-name').form-label
+                    | Full name
+                  input(id='profile-name' type='text' value='Robert Fox').form-control
+
+                .col-sm-6
+                  label(for='profile-username').form-label
+                    | Username
+                  input(id='profile-username' type='text' placeholder='@enter_name').form-control
+
+                .col-sm-6
+                  label(for='profile-uid').form-label
+                    | UID
+                  input(id='profile-uid' type='text' value='374702749').form-control
+
+                .col-sm-6
+                  label(for='profile-email').form-label
+                    | Email
+                  input(id='profile-email' type='email' value='example@gmail.com').form-control
+
+                .col-12
+                  label(for='profile-bio').form-label
+                    | Short bio
+                  textarea(id='profile-bio' rows='4' placeholder='Tell about yourself in few words').form-control
+                  span.form-text 0 of 500 characters used.
+
+              h3.h5.mb-3 Social media profiles
+              .row.gy-3.mb-4.pb-2
+                .col-sm-6
+                  label(for='profile-website').form-label
+                    | Website
+                  input(id='profile-website' type='url' placeholder='Enter URL').form-control
+
+                .col-sm-6
+                  label(for='profile-twitter').form-label
+                    | Twitter
+                  input(id='profile-twitter' type='url' placeholder='Enter URL').form-control
+
+                .col-sm-6
+                  label(for='profile-facebook').form-label
+                    | Facebook
+                  input(id='profile-facebook' type='url' placeholder='Enter URL').form-control
+
+                .col-sm-6
+                  label(for='profile-instagram').form-label
+                    | Instagram
+                  input(id='profile-instagram' type='url' placeholder='Enter URL').form-control
+
+                .col-12
+                  a(href='#')
+                    i.ci-add.me-2
+                    ins Add more
+
+              // Submit
+              .d-flex.flex-sm-row.flex-column
+                button(type='submit').btn.btn-accent
+                  | Update profile
+
+//- Footer
+block footer
+  include partials/footer-nft-account
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

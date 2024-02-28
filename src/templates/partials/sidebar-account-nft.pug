@@ -1,0 +1,39 @@
+//- Account sidebar (NFT Demo)
+
+// Account menu toggler (hidden on screens larger 992px)
+.d-block.d-lg-none.p-4
+  a(href='#account-menu' data-bs-toggle='collapse').btn.btn-outline-accent.d-block
+    i.ci-menu.me-2
+    | Account menu
+
+// Actual menu
+.h-100.border-end.mb-2
+  #account-menu.d-lg-block.collapse
+    ul.list-unstyled.mb-0
+      li.border-bottom.mb-0
+        a(href='nft-account-settings.html')&attributes(parentMenu === 'Account Settings' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+          i.ci-settings.opacity-60.me-2
+          | Profile Settings
+      li.border-bottom.mb-0
+        a(href='nft-account-my-items.html')&attributes(parentMenu === 'Account Items' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+          i.ci-image.opacity-60.me-2
+          | My Items
+          span.fs-sm.text-muted.ms-auto 5
+      li.border-bottom.mb-0
+        a(href='nft-account-my-collections.html')&attributes(parentMenu === 'Account Collections' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+          i.ci-view-list.opacity-60.me-2
+          | My Collections
+          span.fs-sm.text-muted.ms-auto 2
+      li.border-bottom.mb-0
+        a(href='nft-account-favorites.html')&attributes(parentMenu === 'Account Favorites' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+          i.ci-heart.opacity-60.me-2
+          | Favorites
+          span.fs-sm.text-muted.ms-auto 3
+      li.border-bottom.mb-0
+        a(href='nft-account-notifications.html')&attributes(parentMenu === 'Account Notifications' ? {'class': 'nav-link-style d-flex align-items-center px-4 py-3 active'} : {'class': 'nav-link-style d-flex align-items-center px-4 py-3'})
+          i.ci-bell.opacity-60.me-2
+          | Notifications
+      li.border-bottom.mb-0
+        a(href='account-signin.html').nav-link-style.d-flex.align-items-center.px-4.py-3
+          i.ci-sign-out.opacity-60.me-2
+          | Sign out

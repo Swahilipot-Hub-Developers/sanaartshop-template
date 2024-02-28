@@ -1,0 +1,30 @@
+// Toolbar for handheld devices (NFT Marketplace)
+if isToolbar
+  .handheld-toolbar
+    .d-table.table-layout-fixed.w-100
+      if pageTitle !== 'NFT Marketplace - Account'
+        a(href='#vendor-sidebar' data-bs-toggle='offcanvas')&attributes(pageTitle === 'NFT Marketplace - Vendor Page' ? {'class': 'd-table-cell handheld-toolbar-item'} : {'class': 'd-none handheld-toolbar-item'})
+          span.handheld-toolbar-icon
+            i.ci-sign-in
+          span.handheld-toolbar-label Sidebar
+        a(href='#signin-modal' data-bs-toggle='modal').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon: i.ci-user
+          span.handheld-toolbar-label Account
+        a(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#navbarCollapse' onclick='window.scrollTo(0, 0)').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon: i.ci-menu
+          span.handheld-toolbar-label Menu
+        a(href='nft-connect-wallet.html').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon
+            i.ci-wallet
+          span.handheld-toolbar-label.text-nowrap Connect wallet
+      else
+        a(href='nft-account-settings.html' data-bs-toggle='modal').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon: i.ci-user
+          span.handheld-toolbar-label Account
+        a(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#navbarCollapse' onclick='window.scrollTo(0, 0)').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon: i.ci-menu
+          span.handheld-toolbar-label Menu
+        a(href='nft-create-item.html').d-table-cell.handheld-toolbar-item
+          span.handheld-toolbar-icon
+            i.ci-add
+          span.handheld-toolbar-label Create item

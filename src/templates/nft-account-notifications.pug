@@ -1,0 +1,71 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var pageTitle = 'NFT Marketplace - Account'
+  - var parentMenu = 'Account'
+
+//- Navbar + Modal
+block navbar
+  include partials/navbar-nft
+
+//- Page Content
+block content
+
+  //- nft-account-header.pug template
+  include partials/nft-account-header
+
+  .container.mb-5.pb-3
+    .bg-light.shadow-lg.rounded-3.overflow-hidden
+      .row
+
+        // Sidebar
+        aside.col-lg-3.pe-xl-5
+          //- sidebar-account-nft.pug template
+          include partials/sidebar-account-nft
+
+        // Content
+        section.col-lg-9.pt-lg-4.pb-4.mb-3
+          .pt-2.px-4.ps-lg-0.pe-xl-5
+            h1.h3.mb-4.pb-2.text-sm-start.text-center Notifications
+
+            .bg-secondary.rounded-3.p-4
+              .form-check.form-switch
+                input(type='checkbox' id='nf-disable-all' data-master-checkbox-for='#notification-settings').form-check-input
+                label(for='nf-disable-all').form-check-label.fw-medium Enable/disable all notifications
+            #notification-settings
+              .border-bottom.p-4
+                .form-check.form-switch
+                  input(type='checkbox' id='nf-product-sold' checked).form-check-input
+                  label(for='nf-product-sold').form-check-label Product sold notifications
+                .form-text Send an email when someone purchased one of my products
+              .border-bottom.p-4
+                .form-check.form-switch
+                  input(type='checkbox' id='nf-product-updated' checked).form-check-input
+                  label(for='nf-product-updated').form-check-label Product update notifications
+                .form-text Send an email when a product I've purchased is updated
+              .border-bottom.p-4
+                .form-check.form-switch
+                  input(type='checkbox' id='nf-product-comment' checked).form-check-input
+                  label(for='nf-product-comment').form-check-label Product comment notifications
+                .form-text Send an email when someone comments on one of my products
+              .border-bottom.p-4
+                .form-check.form-switch
+                  input(type='checkbox' id='nf-product-review' checked).form-check-input
+                  label(for='nf-product-review').form-check-label Product review notification
+                .form-text Send an email when someone leaves a review with their rating
+              .border-bottom.p-4
+                .form-check.form-switch
+                  input(type='checkbox' id='nf-daily-summary').form-check-input
+                  label(for='nf-daily-summary').form-check-label Daily summary emails
+                .form-text Send me a daily summary of all products sold, commented or reviewed
+            .d-flex.flex-sm-row.flex-column.mt-4
+              button(type='button' class='btn btn-accent') Save changes
+
+//- Footer
+block footer
+  include partials/footer-nft-account
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar-nft

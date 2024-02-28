@@ -1,0 +1,27 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var parentMenu = 'Pages'
+
+//- Navbar
+block navbar
+  include partials/navbar-1-level-light
+  
+//- Page Content
+block content
+  .container.py-5
+    .row.justify-content-center
+      .col-lg-9.pt-lg-2
+        h1.h2 Sticky Footer Demo
+        p See how footer sticks to the bottom when there is little content on the page. To achive such behavior wrap all the page content except <code>&lt;footer&gt;</code> with <code>&lt;main class="page-wrapper"&gt;...&lt;/main&gt;</code> and add <code>footer</code> class to <code>&lt;footer&gt;</code>.
+
+//- Footer
+block footer
+  footer.footer.bg-dark
+    .container.py-5.text-center
+      h5.text-light.mb-0 I'm a sticky footer
+
+//- Handheld toolbar
+block toolbar
+  include partials/toolbar

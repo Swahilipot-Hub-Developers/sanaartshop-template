@@ -1,0 +1,267 @@
+// Bg shape
+.pt-4.bg-secondary
+
+  if pageTitle === 'NFT Marketplace'
+
+    // Blog recent posts
+    section.container.py-lg-5.py-4
+      .d-flex.align-items-center.justify-content-between.mb-sm-4.mb-2.pb-2
+        h2.h3.mb-0 Resources for getting started
+        a(href='blog-grid.html').btn.btn-outline-accent.ms-3
+          | All articles
+          i.ci-arrow-right.ms-2
+
+      // Blog (carousel)
+      .tns-carousel.pb-lg-5.pb-4
+        .tns-carousel-inner(data-carousel-options='{"items": 2, "controls": false, "nav": true, "gutter": 30, "responsive": {"0":{"items":1},"576":{"items":2},"992":{"items":3}}}')
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/01.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Wade Warren
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Aug 15
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | The complete guide to NFTs art for creators and investors
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/02.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Kathryn Murphy
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Sep 18
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | A chance to win a variety of common, rare and unique NFTs
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/03.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Devon Lane
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Nov 26
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | Exclusive premium events, from exhibitions to unique collectibles
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/01.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Wade Warren
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Aug 15
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | The complete guide to NFTs art for creators and investors
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/02.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Kathryn Murphy
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Sep 18
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | A chance to win a variety of common, rare and unique NFTs
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/03.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Devon Lane
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Nov 26
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | Exclusive premium events, from exhibitions to unique collectibles
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/01.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Wade Warren
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Aug 15
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | The complete guide to NFTs art for creators and investors
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/02.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Kathryn Murphy
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Sep 18
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | A chance to win a variety of common, rare and unique NFTs
+
+          // Carousel item
+          article
+            a(href='blog-single.html').d-block.mb-3
+              img(src='img/nft/blog/03.jpg' alt='Blog image').rounded-3
+            .d-flex.align-items-center.fs-sm.pb-2
+              a(href='#').blog-entry-meta-link
+                | by Devon Lane
+              span.blog-entry-meta-divider
+              a(href='#').blog-entry-meta-link Nov 26
+            h2.h6.blog-entry-title.mb-0
+              a(href='blog-single.html')
+                | Exclusive premium events, from exhibitions to unique collectibles
+
+  else
+
+    // Features
+    section.container.py-lg-5.py-4
+      h2.mb-4.pb-md-3.pb-2 Begin your NFT journey with us!
+
+      // Features carousel
+      .tns-carousel.mb-4
+        .tns-carousel-inner(data-carousel-options='{"items": 2, "nav": true, "gutter": 30, "responsive": {"0":{"items":1,"controls": false},"500":{"items":2},"768":{"items":3}, "1100":{"items":4}, "1278":{"controls": true}}}')
+
+          // Carousel item
+          div
+            img(src='img/nft/features/wallet.svg' width='60' alt='Icon').mb-4
+            h4.mb-2.fs-lg.text-body
+              | Set up your wallet
+            p.mb-0.fs-sm.text-muted
+              | Quam nulla in id nibh. Morbi eget elit eget dui est pretium, blandit penatibus blandit. Amet mattis blandit urna volutpat.
+
+          // Carousel item
+          div
+            img(src='img/nft/features/add.svg' width='60' alt='Icon').mb-4
+            h4.mb-2.fs-lg.text-body
+              | Create your collection
+            p.mb-0.fs-sm.text-muted
+              | Fringilla ullamcorper aenean tellus ullamcorper neque, malesuada. Aliquam consequat nunc.
+
+          // Carousel item
+          div
+            img(src='img/nft/features/image.svg' width='60' alt='Icon').mb-4
+            h4.mb-2.fs-lg.text-body
+              | Add your NFTs
+            p.mb-0.fs-sm.text-muted
+              | Platea eu aliquam pellentesque parturient. Volutpat, fermentum suspendisse at nisi cras mattis augue.
+
+          // Carousel item
+          div
+            img(src='img/nft/features/shopping-cart.svg' width='60' alt='Icon').mb-4
+            h4.mb-2.fs-lg.text-body
+              | List them for sale
+            p.mb-0.fs-sm.text-muted
+              | In eget nulla id feugiat ut placerat sapien malesuada. Sed id risus non accumsan eu amet ut pellentesque.
+
+
+  // Mail subscription
+  section.container
+    .card.py-5.border-0.shadow
+      .card-body.py-md-4.py-3.px-4.text-center
+        h3.mb-3
+          | Never miss a drop!
+        p.mb-4.pb-2
+          | Subscribe to our ultra-exclusive drop list and be the first to know about upcoming drops.
+        div(style='max-width: 500px;').widget.mx-auto
+          form(action='https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;id=29ca296126' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate).subscription-form.validate
+            .input-group.flex-nowrap
+              i.ci-mail.position-absolute.top-50.translate-middle-y.text-muted.fs-base.ms-3
+              input(type='email' name='EMAIL' placeholder='Your email' required).form-control.rounded-start
+              button(type='submit' name='subscribe').btn.btn-accent Subscribe*
+            // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+            div(style='position: absolute; left: -5000px;' aria-hidden='true')
+              input(type='text' name='b_c7103e2c981361a6639545bd5_29ca296126' tabindex='-1').subscription-form-antispam
+            .form-text.mt-3 *Receive early discount offers, updates and new products info.
+            .subscription-status
+
+
+// Footer
+footer.footer.bg-darker
+  .mt-n10.pt-10.bg-dark
+    .container.py-5
+      .row.py-lg-4
+        .col-lg-4.mb-lg-0.mb-4
+          .widget.pb-3.mb-lg-4
+            h3.widget-title.text-light.pb-1 Stay informed
+            form(action='https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;id=29ca296126' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate).subscription-form.validate
+              .input-group.flex-nowrap
+                i.ci-mail.position-absolute.top-50.translate-middle-y.text-muted.fs-base.ms-3
+                input(type='email' name='EMAIL' placeholder='Your email' required).form-control.rounded-start
+                button(type='submit' name='subscribe').btn.btn-accent Subscribe*
+              // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+              div(style='position: absolute; left: -5000px;' aria-hidden='true')
+                input(type='text' name='b_c7103e2c981361a6639545bd5_29ca296126' tabindex='-1').subscription-form-antispam
+              .form-text.text-light.opacity-50 *Subscribe to our newsletter to receive early discount offers, updates and new products info.
+              .subscription-status
+          div
+            a(href='#').btn-social.bs-light.bs-twitter.me-2.mb-2
+              i.ci-twitter
+            a(href='#').btn-social.bs-light.bs-facebook.me-2.mb-2
+              i.ci-facebook
+            a(href='#').btn-social.bs-light.bs-instagram.me-2.mb-2
+              i.ci-instagram
+            a(href='#').btn-social.bs-light.bs-pinterest.me-2.mb-2
+              i.ci-pinterest
+            a(href='#').btn-social.bs-light.bs-youtube.me-2.mb-2
+              i.ci-youtube
+        .col-lg-6.offset-lg-1
+          .d-flex.flex-sm-row.flex-column.justify-content-sm-between.mt-n4.mx-lg-n3
+            .widget.widget-links.widget-light.mt-4.px-lg-3.px-sm-n2
+              h3.widget-title.text-light Company
+              ul.widget-list
+                li.widget-list-item: a(href='#').widget-list-link About Us
+                li.widget-list-item: a(href='#').widget-list-link How It Works
+                li.widget-list-item: a(href='#').widget-list-link Create an NFT With Us
+                li.widget-list-item: a(href='#').widget-list-link Support
+                li.widget-list-item: a(href='#').widget-list-link Blog
+                li.widget-list-item: a(href='#').widget-list-link My Account
+            .widget.widget-links.widget-light.mt-4.px-lg-3.px-sm-n2
+              h3.widget-title.text-light Marketplace
+              ul.widget-list
+                li.widget-list-item: a(href='#').widget-list-link All NFTs
+                li.widget-list-item: a(href='#').widget-list-link New
+                li.widget-list-item: a(href='#').widget-list-link Art
+                li.widget-list-item: a(href='#').widget-list-link Music
+                li.widget-list-item: a(href='#').widget-list-link Photography
+                li.widget-list-item: a(href='#').widget-list-link Utility
+            .widget.widget-links.widget-light.mt-4.px-lg-3.px-sm-n2
+              h3.widget-title.text-light Help
+              ul.widget-list
+                li.widget-list-item: a(href='#').widget-list-link Terms and Conditions
+                li.widget-list-item: a(href='#').widget-list-link Privacy Policy
+                li.widget-list-item: a(href='#').widget-list-link FAQ
+  .container.my-lg-4.my-3.py-2
+    .d-flex.flex-md-row.flex-column-reverse.align-items-center.justify-content-md-between
+      .fs-xs.text-light.opacity-50
+        | &copy; All rights reserved. Made by 
+        a(href='https://createx.studio/' target='_blank' rel='noopener').text-light Createx Studio
+      .d-flex.align-items-start.mb-md-0.mb-3.mx-n1
+        .px-1
+          a(href='#').btn-market.btn-apple.bg-dark
+            span.btn-market-subtitle Download on the
+            span.btn-market-title App Store
+        .px-1
+          a(href='#').btn-market.btn-google.bg-dark
+            span.btn-market-subtitle Download on the
+            span.btn-market-title Google Play

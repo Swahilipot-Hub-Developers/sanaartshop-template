@@ -1,0 +1,86 @@
+// Navbar for NFT Marketplace demo
+// Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+header()&attributes(pageTitle === 'NFT Marketplace' ? {'class': 'navbar d-block navbar-sticky navbar-expand-lg navbar-light position-absolute w-100'} : {'class': 'navbar d-block navbar-sticky navbar-expand-lg navbar-light bg-light'})
+  .container
+    a(href='index.html').navbar-brand.d-none.d-sm-block.me-4.order-lg-1
+      img(src='img/logo-dark.png' width='142' alt='Cartzilla')
+    a(href='index.html').navbar-brand.d-sm-none.me-2.order-lg-1
+      img(src='img/logo-icon.png' width='74' alt='Cartzilla')
+
+    .navbar-toolbar.d-flex.align-items-center.order-lg-3
+      button(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse').navbar-toggler
+        span.navbar-toggler-icon
+      a(href='javascript:void(0)' data-bs-toggle='collapse' data-bs-target='#searchBox' role='button' aria-expanded='false', aria-controls='searchBox').navbar-tool.d-none.d-lg-flex
+        span.navbar-tool-tooltip Search
+        .navbar-tool-icon-box: i.navbar-tool-icon.ci-search
+      if pageTitle !== 'NFT Marketplace - Account'
+        a(href='#signin-modal' data-bs-toggle='modal').navbar-tool.ms-lg-2
+          span.navbar-tool-tooltip Account
+          .navbar-tool-icon-box: i.navbar-tool-icon.ci-user
+        a(href='nft-connect-wallet.html').btn.btn-sm.btn-accent.rounded-1.ms-lg-4.ms-2 Connect Wallet
+      else
+        .navbar-tool.dropdown.ms-lg-3.ms-2
+          a(href='nft-account-settings.html').navbar-tool-icon-box.d-inline-block.w-auto.h-auto.dropdown-toggle.mt-n1
+            img(src='img/nft/vendor/avatar-sm.png' width='36' alt='User')
+          .dropdown-menu.dropdown-menu-end
+            div(style='min-width: 14rem;')
+              h6.dropdown-header @foxnet_creator
+              a(href='nft-account-settings.html').dropdown-item.d-flex.align-items-center
+                i.ci-settings.opacity-60.me-2
+                | Profile Settings
+              a(href='nft-account-my-items.html').dropdown-item.d-flex.align-items-center
+                i.ci-image.opacity-60.me-2
+                | My Items
+                span.fs-xs.text-muted.ms-auto 5
+              a(href='nft-account-my-collections.html').dropdown-item.d-flex.align-items-center
+                i.ci-view-list.opacity-60.me-2
+                | My Collections
+                span.fs-xs.text-muted.ms-auto 2
+              a(href='nft-account-favorites.html').dropdown-item.d-flex.align-items-center
+                i.ci-heart.opacity-60.me-2
+                | Favorites
+                span.fs-xs.text-muted.ms-auto 3
+              a(href='nft-account-notifications.html').dropdown-item.d-flex.align-items-center
+                i.ci-bell.opacity-60.me-2
+                | Notifications
+        a(href='nft-create-item.html').btn.btn-sm.btn-accent.rounded-1.ms-lg-4.ms-3 Create
+
+    #navbarCollapse.collapse.navbar-collapse.me-auto.order-lg-2
+
+      // Search (mobile)
+      div.d-lg-none.py-3
+        .input-group
+          i.ci-search.position-absolute.top-50.start-0.translate-middle-y.ms-3
+          input(type='text' placeholder='What do you need?').form-control.rounded-start
+
+      // Primary menu
+      ul.navbar-nav
+        li()&attributes(parentMenu === 'Home' ? {'class': 'nav-item active'} : {'class': 'nav-item dropdown'})
+          a(href='home-nft.html').nav-link Home
+        li()&attributes(parentMenu === 'Catalog' ? {'class': 'nav-item dropdown active'} : {'class': 'nav-item dropdown'})
+          a(href='#' data-bs-toggle='dropdown').nav-link.dropdown-toggle Catalog
+          ul.dropdown-menu
+            li: a(href='nft-catalog-v1.html').dropdown-item Catalog v.1
+            li: a(href='nft-catalog-v2.html').dropdown-item Catalog v.2
+            li: a(href='nft-single-auction-live.html').dropdown-item Single Item - Auction Live
+            li: a(href='nft-single-auction-ended.html').dropdown-item Single Item - Auction Ended
+            li: a(href='nft-single-buy.html').dropdown-item Single Item - Buy Now
+            li: a(href='nft-vendor.html').dropdown-item Vendor Page
+            li: a(href='nft-connect-wallet.html').dropdown-item Connect Wallet
+            li: a(href='nft-create-item.html').dropdown-item Create New Item
+        li()&attributes(parentMenu === 'Account' ? {'class': 'nav-item dropdown active'} : {'class': 'nav-item dropdown'})
+          a(href='#' data-bs-toggle='dropdown').nav-link.dropdown-toggle Account
+          ul.dropdown-menu
+            li: a(href='nft-account-settings.html').dropdown-item Profile Settings
+            li: a(href='nft-account-my-items.html').dropdown-item My Items
+            li: a(href='nft-account-my-collections.html').dropdown-item My Collections
+            li: a(href='nft-account-favorites.html').dropdown-item Favorites
+            li: a(href='nft-account-notifications.html').dropdown-item Notifications
+        li.nav-item: a(href='index.html').nav-link Back to main demo
+
+  // Search collapse
+  #searchBox.search-box.collapse
+    .container.py-2
+      .input-group
+        i.ci-search.position-absolute.top-50.start-0.translate-middle-y.ms-3
+        input(type='text' placeholder='What do you need?').form-control.rounded-start
